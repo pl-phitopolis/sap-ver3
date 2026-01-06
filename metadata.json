@@ -1,0 +1,7 @@
+{
+  "name": "Safety Alert Patrol (SAP)",
+  "description": "Connecting retired military and law enforcement officers with schools and churches for community-first safety patrol support.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
