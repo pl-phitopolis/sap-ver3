@@ -13,8 +13,8 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full z-0">
-          <div className="absolute top-[10%] left-[5%] w-[40%] h-[60%] bg-indigo-600/10 blur-[120px] rounded-full animate-pulse"></div>
-          <div className="absolute bottom-[10%] right-[5%] w-[30%] h-[50%] bg-emerald-600/5 blur-[100px] rounded-full"></div>
+          <div className="absolute top-[10%] left-[5%] w-[40%] h-[60%] bg-indigo-600/15 blur-[120px] rounded-full animate-pulse transition-opacity duration-1000"></div>
+          <div className="absolute bottom-[10%] right-[5%] w-[30%] h-[50%] bg-emerald-600/10 blur-[100px] rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
@@ -31,8 +31,9 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
               <button 
                 onClick={() => navigateTo('#/contact?role=guard')} 
-                className="px-8 py-4 md:px-10 md:py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold text-base md:text-lg transition-all flex items-center justify-center gap-2 group shadow-lg shadow-indigo-600/20"
+                className="shimmer-trigger relative overflow-hidden px-8 py-4 md:px-10 md:py-5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl font-bold text-base md:text-lg transition-all flex items-center justify-center gap-2 group shadow-lg shadow-indigo-600/20"
               >
+                <div className="shimmer-element absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"></div>
                 Join the Patrol <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
