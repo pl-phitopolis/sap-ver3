@@ -6,8 +6,6 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 
-// Define a simple routing context to avoid prop drilling and handle 
-// navigation without triggering origin-restricted browser behaviors.
 interface RouterContextType {
   currentPath: string;
   navigateTo: (path: string) => void;
@@ -28,20 +26,17 @@ const App: React.FC = () => {
   };
 
   const [currentPath, setCurrentPath] = useState(getNormalizedHash());
+  const [key, setKey] = useState(0); // For forcing re-animation on path change
 
   const navigateTo = (path: string) => {
-    // Standardize path
     const targetPath = path.startsWith('#') ? path : `#${path}`;
-    
-    // Update state first for immediate UI response
     setCurrentPath(targetPath);
+    setKey(prev => prev + 1); // Trigger re-entry animation
     
-    // Attempt to update hash for back-button support, but wrap in try-catch
-    // as it can fail in highly restricted sandboxes.
     try {
       window.location.hash = targetPath;
     } catch (e) {
-      console.warn("Navigation: Could not update URL hash, but state was updated.", e);
+      console.warn("Navigation: Could not update URL hash", e);
     }
     
     window.scrollTo(0, 0);
@@ -50,12 +45,15 @@ const App: React.FC = () => {
   useEffect(() => {
     const handleHashChange = () => {
       const normalized = getNormalizedHash();
-      setCurrentPath(normalized);
+      if (normalized !== currentPath) {
+        setCurrentPath(normalized);
+        setKey(prev => prev + 1);
+      }
     };
 
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+  }, [currentPath]);
 
   const renderPage = () => {
     const path = currentPath.split('?')[0];
@@ -75,10 +73,12 @@ const App: React.FC = () => {
 
   return (
     <RouterContext.Provider value={{ currentPath, navigateTo }}>
-      <div className="min-h-screen flex flex-col bg-slate-950 text-slate-50 selection:bg-indigo-500 selection:text-white">
+      <div className="min-h-screen flex flex-col bg-slate-950 text-slate-50 selection:bg-[#D69E2E] selection:text-white">
         <Navigation currentPath={currentPath} />
-        <main className="flex-grow">
-          {renderPage()}
+        <main className="flex-grow overflow-hidden">
+          <div key={key} className="animate-entry">
+            {renderPage()}
+          </div>
         </main>
         <Footer />
         
@@ -86,9 +86,9 @@ const App: React.FC = () => {
         <div className="fixed bottom-8 right-8 z-[60] hidden md:block">
           <button 
             onClick={() => navigateTo('#/contact?role=donor')}
-            className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-8 rounded-2xl shadow-2xl shadow-indigo-600/40 transition-all transform hover:-translate-y-1 flex items-center gap-3 border border-indigo-400/30"
+            className="bg-[#D69E2E] hover:bg-[#c48d24] text-slate-900 font-bold py-4 px-8 rounded-2xl shadow-2xl shadow-[#D69E2E]/20 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center gap-3 border border-white/20"
           >
-            <span className="w-2 h-2 rounded-full bg-indigo-200 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
             Donate to Mission
           </button>
         </div>

@@ -32,17 +32,20 @@ const Navigation: React.FC<NavigationProps> = ({ currentPath: propsPath }) => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800' : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled 
+        ? 'bg-[#020617]/70 backdrop-blur-xl border-b border-white/10 shadow-2xl py-0' 
+        : 'bg-transparent py-2'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <button 
               onClick={(e) => handleNavClick(e, '#/')} 
-              className="flex items-center gap-2 group outline-none"
+              className="flex items-center gap-2 group outline-none focus-visible:ring-2 focus-visible:ring-[#D69E2E]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 rounded-lg p-1"
+              aria-label="Safety Alert Patrol Home"
             >
-              <Shield className="w-8 h-8 text-indigo-500 group-hover:scale-110 transition-transform" />
+              <Shield className="w-8 h-8 text-[#D69E2E] group-hover:scale-110 transition-transform" />
               <span className="text-2xl font-black tracking-tighter text-white">SAP</span>
             </button>
           </div>
@@ -56,23 +59,25 @@ const Navigation: React.FC<NavigationProps> = ({ currentPath: propsPath }) => {
                   <button
                     key={item.label}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`px-3 py-2 text-sm font-medium transition-all relative group outline-none ${
-                      isActive ? 'text-indigo-400' : 'text-slate-300 hover:text-white'
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`px-3 py-2 text-sm font-bold transition-all relative group outline-none focus-visible:ring-2 focus-visible:ring-[#D69E2E]/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 rounded-lg ${
+                      isActive ? 'text-[#D69E2E]' : 'text-slate-300 hover:text-white'
                     }`}
                   >
                     {item.label}
                     {isActive && (
-                      <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-indigo-500 rounded-full" />
+                      <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-[#D69E2E] rounded-full" />
                     )}
                   </button>
                 );
               })}
               <button
                 onClick={(e) => handleNavClick(e, '#/contact')}
-                className={`px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 ml-4 outline-none ${
+                aria-current={activePath === '#/contact' ? 'page' : undefined}
+                className={`px-5 py-2 rounded-xl text-sm font-black transition-all transform hover:scale-105 active:scale-95 ml-4 outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
                   activePath === '#/contact' 
-                    ? 'bg-white text-indigo-600' 
-                    : 'bg-indigo-600 hover:bg-indigo-500 text-white'
+                    ? 'bg-white text-[#1A365D]' 
+                    : 'bg-[#D69E2E] hover:bg-[#c48d24] text-[#1A365D]'
                 }`}
               >
                 Get Involved
@@ -84,8 +89,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentPath: propsPath }) => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none"
-              aria-label="Toggle menu"
+              className="inline-flex items-center justify-center p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-[#D69E2E]/50"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label="Main menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -94,28 +101,32 @@ const Navigation: React.FC<NavigationProps> = ({ currentPath: propsPath }) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-        isOpen ? 'max-h-[500px] border-b border-slate-800 bg-slate-900' : 'max-h-0'
-      }`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <div 
+        id="mobile-menu"
+        className={`md:hidden overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isOpen ? 'max-h-[500px] border-b border-white/10 bg-[#020617]/95 backdrop-blur-2xl' : 'max-h-0'
+        }`}
+      >
+        <div className="px-4 pt-4 pb-6 space-y-2">
           {NAV_ITEMS.map((item) => {
             const isActive = activePath === item.href;
             return (
               <button
                 key={item.label}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`block w-full text-left px-3 py-4 text-base font-medium transition-colors outline-none ${
-                  isActive ? 'text-indigo-400 bg-slate-800/50' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                aria-current={isActive ? 'page' : undefined}
+                className={`block w-full text-left px-4 py-4 text-base font-bold transition-all rounded-xl ${
+                  isActive ? 'text-[#D69E2E] bg-white/5' : 'text-slate-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {item.label}
               </button>
             );
           })}
-          <div className="pt-4 pb-4 px-3">
+          <div className="pt-4">
             <button
               onClick={(e) => handleNavClick(e, '#/contact')}
-              className="w-full block text-center bg-indigo-600 text-white px-5 py-3 rounded-xl text-base font-bold active:scale-95 transition-transform"
+              className="w-full block text-center bg-[#D69E2E] text-[#1A365D] px-5 py-4 rounded-2xl text-base font-black active:scale-95 transition-transform shadow-xl shadow-[#D69E2E]/20"
             >
               Get Involved
             </button>
