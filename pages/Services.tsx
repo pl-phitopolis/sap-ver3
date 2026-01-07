@@ -19,45 +19,45 @@ const Services: React.FC = () => {
 
   const steps = [
     {
-      title: 'Assessment',
-      desc: 'Our security scientists conduct a 72-point site vulnerability audit.',
+      title: 'Vulnerability Audit',
+      desc: 'Algorithmic 72-point site heat mapping to establish institutional risk baselines.',
       icon: <Activity className="w-6 h-6" />
     },
     {
-      title: 'Selection',
-      desc: 'Tier-1 vetting matched to your specific campus culture.',
+      title: 'Personnel Ingestion',
+      desc: 'High-throughput vetting protocols to match Tier-1 personnel with institutional culture.',
       icon: <UserCheck className="w-6 h-6" />
     },
     {
-      title: 'Integration',
-      desc: 'Seamless deployment using our "Stealth Stewardship" protocols.',
+      title: 'Tactical Deployment',
+      desc: 'Low-latency integration utilizing our proprietary "Stealth Stewardship" security model.',
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: 'Reporting',
-      desc: 'Daily digital logs and monthly performance reviews.',
+      title: 'Mission Analytics',
+      desc: 'Real-time telemetry and mission logging for 100% operational transparency.',
       icon: <BookOpen className="w-6 h-6" />
     }
   ];
 
   const faqs = [
-    { q: 'How do you vet your patrol officers?', a: 'Every guard undergoes a multi-layered screening process including psychological evaluations, criminal background checks at the federal level, and a panel interview.' },
-    { q: 'What is the institutional liability model?', a: 'SAP carries a comprehensive $10M umbrella policy designed specifically for professional security stewardship, mitigating institutional risk.' },
-    { q: 'How does the cost compare to private security?', a: 'As a nonprofit, our model is significantly more cost-effective. We prioritize impact over profit, allowing institutions to access elite protection at local rates.' }
+    { q: 'How is personnel ingestion handled?', a: 'Every guard undergoes a multi-layered screening process including psychological evaluations, criminal background checks at the federal level, and a panel interview led by Code Willing executive leadership and Tier-1 commanders.' },
+    { q: 'What is the risk mitigation model?', a: 'SAP leverages Code Willing\'s institutional reliability model, backed by a comprehensive $10M umbrella policy designed for mission-critical institutional stewardship.' },
+    { q: 'How does the nonprofit model reduce latency?', a: 'By prioritizing community impact over corporate profit, we redirect high-performance engineering resources into operational efficiency, delivering elite protection at scale.' }
   ];
 
   const PhaseContent = ({ index }: { index: number }) => (
     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center w-full">
       <div className="flex-1 w-full text-left">
-        <h2 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 tracking-tight text-white uppercase">The {steps[index].title} Phase</h2>
+        <h2 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 tracking-tight text-white uppercase">{steps[index].title}</h2>
         <p className="text-sm md:text-lg text-slate-400 leading-relaxed mb-6 md:mb-8">
-          During the {steps[index].title.toLowerCase()} phase, we utilize proprietary methodologies developed by top-tier tactical planners to ensure maximum coverage and institutional safety.
+          The {steps[index].title.toLowerCase()} protocol utilizes proprietary tactical methodologies to ensure mission uptime. We treat institutional security as a physical infrastructure challenge that must remain unobtrusive yet absolute.
         </p>
         <ul className="space-y-3 md:space-y-4">
           {[1, 2, 3].map((item) => (
             <li key={item} className="flex items-center gap-3 md:gap-4 text-slate-300 text-sm md:text-base">
               <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-[#D69E2E] shrink-0" />
-              <span>Critical operational protocol level {index + 1}.{item}</span>
+              <span>Operational Protocol SAP-{index + 1}.{item}</span>
             </li>
           ))}
         </ul>
@@ -68,8 +68,8 @@ const Services: React.FC = () => {
           <div className="w-20 h-20 md:w-32 md:h-32 bg-[#D69E2E]/10 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 border border-[#D69E2E]/30 group-hover:scale-110 group-hover:bg-[#D69E2E]/20 transition-all duration-500">
              <Shield className="w-10 h-10 md:w-16 md:h-16 text-[#D69E2E]" />
           </div>
-          <p className="font-mono text-[#D69E2E] text-[10px] md:text-xs uppercase tracking-widest font-bold">Protocol Visualization</p>
-          <p className="text-slate-500 text-[10px] md:text-sm mt-2 font-mono">ID: SAP-PRO-{index + 100}</p>
+          <p className="font-mono text-[#D69E2E] text-[10px] md:text-xs uppercase tracking-widest font-bold">System Visualization</p>
+          <p className="text-slate-500 text-[10px] md:text-sm mt-2 font-mono">ID: CW-SAP-{index + 100}</p>
         </div>
       </div>
     </div>
@@ -77,13 +77,12 @@ const Services: React.FC = () => {
 
   return (
     <div className="pt-20 bg-slate-950 min-h-screen">
-      {/* Parallax Background Layer */}
       <div 
         className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-[0.03]"
         style={{ transform: `translateY(${scrollY * 0.1}px)` }}
       >
         <h2 className="text-[20vw] font-black uppercase tracking-tighter whitespace-nowrap select-none">
-          Security Protocol
+          Command Science
         </h2>
       </div>
 
@@ -93,7 +92,7 @@ const Services: React.FC = () => {
           <div className={`max-w-3xl mb-12 md:mb-16 transition-all duration-1000 ${introReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-7xl font-black mb-6 md:mb-8 tracking-tight text-white uppercase">Security Science.</h1>
             <p className="text-lg md:text-xl text-slate-400 leading-relaxed text-left">
-              Moving beyond reactive security into <span className="text-white font-bold underline decoration-[#D69E2E] decoration-4 underline-offset-8">pro-active precision stewardship.</span> Our model is clinical, evidence-based, and human-centric.
+              Evolving institutional safety from reactive measures into <span className="text-white font-bold underline decoration-[#D69E2E] decoration-4 underline-offset-8">Mission-Critical Stewardship.</span> Our model is clinical, engineering-based, and human-centric.
             </p>
           </div>
 
@@ -119,7 +118,6 @@ const Services: React.FC = () => {
                 }`}
                 onClick={() => setActiveStep(idx)}
               >
-                {/* Active Progress Bar */}
                 {activeStep === idx && (
                   <div className="absolute top-0 left-0 h-1 bg-[#D69E2E] w-full animate-pulse"></div>
                 )}
@@ -169,7 +167,7 @@ const Services: React.FC = () => {
       <section ref={faqReveal.ref} className="py-12 md:py-24 relative z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`text-3xl md:text-4xl font-black mb-8 md:mb-12 text-center tracking-tight text-white uppercase transition-all duration-1000 ${faqReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            Implementation FAQ
+            Operational FAQ
           </h2>
           <div className="space-y-4">
             {faqs.map((faq, idx) => (

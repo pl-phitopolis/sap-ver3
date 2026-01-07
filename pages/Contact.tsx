@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Shield, Landmark, Heart } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -68,7 +69,7 @@ const Contact: React.FC = () => {
           <input 
             required
             type="text" 
-            placeholder="e.g. James Vance"
+            placeholder="e.g. Baron Davis"
             className="w-full bg-slate-950/80 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#D69E2E]/50 focus:ring-4 focus:ring-[#D69E2E]/5 transition-all text-white text-base placeholder:text-slate-600 font-medium backdrop-blur-md"
           />
         </div>
@@ -77,7 +78,7 @@ const Contact: React.FC = () => {
           <input 
             required
             type="email" 
-            placeholder="e.g. james@ops-secure.org"
+            placeholder="e.g. baron@ops-secure.org"
             className="w-full bg-slate-950/80 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-[#D69E2E]/50 focus:ring-4 focus:ring-[#D69E2E]/5 transition-all text-white text-base placeholder:text-slate-600 font-medium backdrop-blur-md"
           />
         </div>

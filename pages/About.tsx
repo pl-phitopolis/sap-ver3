@@ -13,9 +13,9 @@ const About: React.FC = () => {
       <section ref={introReveal.ref} className="py-24 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`max-w-3xl mb-16 transition-all duration-1000 ${introReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight uppercase">Our Stewardship.</h1>
+            <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight uppercase">Operational Stewardship.</h1>
             <p className="text-xl text-slate-400 leading-relaxed">
-              Safety Alert Patrol was founded on a singular principle: that the men and women who protected our country are uniquely qualified to protect our communities.
+              Safety Alert Patrol (SAP) represents the convergence of high-throughput data infrastructure and elite veteran discipline. We treat community safety as a mission-critical infrastructure challenge that demands the same reliability as global financial markets.
             </p>
           </div>
 
@@ -31,8 +31,8 @@ const About: React.FC = () => {
                     <History className="w-6 h-6 text-[#D69E2E]" />
                   </div>
                   <div className="text-left">
-                    <h3 className="text-xl font-black mb-3 uppercase tracking-tight text-white">The Founding</h3>
-                    <p className="text-slate-400 leading-relaxed">Established in 2021 by a coalition of retired special operations officers and educators who recognized a critical gap in institutional safety protocols.</p>
+                    <h3 className="text-xl font-black mb-3 uppercase tracking-tight text-white">The Engineering Heritage</h3>
+                    <p className="text-slate-400 leading-relaxed">Founded by Baron Davis (CEO of Code Willing), SAP applies the same systematic engineering standards used in managing global data infrastructure to the physical security of our schools.</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
@@ -40,8 +40,8 @@ const About: React.FC = () => {
                     <Target className="w-6 h-6 text-white" />
                   </div>
                   <div className="text-left">
-                    <h3 className="text-xl font-black mb-3 uppercase tracking-tight text-white">The Mission</h3>
-                    <p className="text-slate-400 leading-relaxed">To provide elite, professional safety patrol support while facilitating the meaningful transition of veterans back into community-centric service.</p>
+                    <h3 className="text-xl font-black mb-3 uppercase tracking-tight text-white">The Mission Protocol</h3>
+                    <p className="text-slate-400 leading-relaxed">To provide elite, professional safety patrol support while facilitating the meaningful transition of Tier-1 veterans into community-centric guardianship roles.</p>
                   </div>
                 </div>
               </div>
@@ -60,27 +60,27 @@ const About: React.FC = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div className="text-left">
-                <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight uppercase text-white">Radical Transparency.</h2>
+                <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight uppercase text-white">Data-Verified Trust.</h2>
                 <p className="text-slate-400 mb-12 text-lg leading-relaxed">
-                  As a 501(c)(3), we are committed to absolute financial and operational transparency. Every dollar is tracked, every patrol is logged, and every outcome is verified.
+                  As a nonprofit subsidiary of a global data engineering leader, we are committed to radical operational transparency. Every patrol is audited, every interaction is logged, and every outcome is verified via our proprietary telemetry.
                 </p>
                 <div className="grid grid-cols-2 gap-8">
                   <div className={`reveal-hidden ${transparencyReveal.isVisible ? 'reveal-visible stagger-1' : ''}`}>
                     <p className="text-4xl font-black text-[#D69E2E] mb-1">87%</p>
-                    <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Program Services</p>
+                    <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Efficiency Rating</p>
                   </div>
                   <div className={`reveal-hidden ${transparencyReveal.isVisible ? 'reveal-visible stagger-2' : ''}`}>
                     <p className="text-4xl font-black text-white mb-1">100%</p>
-                    <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Vetting Rigor</p>
+                    <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Ingestion Audit</p>
                   </div>
                 </div>
               </div>
 
               <div className="space-y-6">
                 {[
-                  { title: '2023 Annual Report', size: 'PDF • 4.2 MB', icon: <FileText className="w-6 h-6 text-slate-400" /> },
-                  { title: 'IRS Form 990', size: 'PDF • 1.8 MB', icon: <FileText className="w-6 h-6 text-slate-400" /> },
-                  { title: 'Safety Standards V.4', size: 'PDF • 2.1 MB', icon: <ShieldCheck className="w-6 h-6 text-slate-400" /> }
+                  { title: '2023 Infrastructure Audit', size: 'PDF • 4.2 MB', icon: <FileText className="w-6 h-6 text-slate-400" /> },
+                  { title: 'Tax Strategy & Compliance', size: 'PDF • 1.8 MB', icon: <FileText className="w-6 h-6 text-slate-400" /> },
+                  { title: 'Protocol Standard V.4', size: 'PDF • 2.1 MB', icon: <ShieldCheck className="w-6 h-6 text-slate-400" /> }
                 ].map((doc, idx) => (
                   <div 
                     key={idx}

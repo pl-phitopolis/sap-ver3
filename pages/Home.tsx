@@ -48,7 +48,6 @@ const Home: React.FC = () => {
 
         {/* Layer 1: High-Intensity Dual-Blob Pulsing Aurora Engine */}
         <div className="absolute inset-0 z-10 pointer-events-none">
-          {/* SAP Gold Atmosphere - High Visibility */}
           <div 
             className="absolute top-[-20%] left-[-10%] w-[80%] h-[80%] bg-[#D69E2E]/20 blur-[180px] rounded-full animate-pulse transition-all duration-[2000ms]"
             style={{ 
@@ -56,7 +55,6 @@ const Home: React.FC = () => {
               animationDuration: '7s'
             }}
           ></div>
-          {/* SAP Navy Atmosphere - High Visibility */}
           <div 
             className="absolute bottom-[-15%] right-[-10%] w-[70%] h-[70%] bg-[#1A365D]/50 blur-[220px] rounded-full animate-pulse transition-all duration-[2000ms]"
             style={{ 
@@ -65,11 +63,10 @@ const Home: React.FC = () => {
               animationDuration: '11s'
             }}
           ></div>
-          {/* Subtle Ambient Mist Over Head */}
           <div className="absolute inset-0 bg-radial-gradient from-transparent via-white/[0.02] to-transparent"></div>
         </div>
 
-        {/* Layer 2: Centered Content Block - Increased Top Spacing for Nav Integrity */}
+        {/* Layer 2: Centered Content Block */}
         <div className="relative z-30 max-w-7xl mx-auto px-4 text-center mt-24 md:mt-32">
           <div className="flex flex-col items-center">
             {/* Mission Badge */}
@@ -78,12 +75,12 @@ const Home: React.FC = () => {
             </div>
             
             <h1 className="animate-blur-reveal stagger-1 text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-black tracking-tighter mb-12 leading-[0.85] text-white uppercase drop-shadow-[0_40px_80px_rgba(0,0,0,1)]">
-              PROTECT THE <br /> <span className="text-[#D69E2E] text-glow">FUTURE.</span>
+              INSTITUTIONAL <br /> <span className="text-[#D69E2E] text-glow">PRECISION.</span>
             </h1>
             
             <p className="animate-blur-reveal stagger-2 text-lg md:text-2xl text-slate-300 mb-20 max-w-3xl leading-relaxed font-medium tracking-tight px-6 opacity-90">
-              Elite veteran guardianship for our schools and houses of worship through a standard of <br className="hidden md:block" /> 
-              <span className="text-white font-black underline decoration-[#D69E2E] decoration-[4px] underline-offset-8">Professional Stewardship.</span>
+              Applying Code Willing’s elite data infrastructure heritage to Tier-1 veteran guardianship for the protection of our <br className="hidden md:block" /> 
+              <span className="text-white font-black underline decoration-[#D69E2E] decoration-[4px] underline-offset-8">Critical Community Assets.</span>
             </p>
 
             <div className="animate-blur-reveal stagger-3 flex flex-col sm:flex-row gap-8 md:gap-12">
@@ -91,14 +88,14 @@ const Home: React.FC = () => {
                 onClick={() => navigateTo('#/contact?role=guard')} 
                 className="group relative overflow-hidden px-16 py-8 bg-[#D69E2E] text-[#1A365D] rounded-full font-black text-xl md:text-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_40px_100px_rgba(214,158,46,0.25)]"
               >
-                Join the Patrol
+                Join the Mission
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1200ms] bg-gradient-to-r from-transparent via-white/70 to-transparent"></div>
               </button>
               <button 
                 onClick={() => navigateTo('#/services')} 
                 className="px-16 py-8 bg-white/5 hover:bg-white/10 text-white border border-white/20 rounded-full font-black text-xl md:text-2xl transition-all hover:scale-105 active:scale-95 backdrop-blur-3xl"
               >
-                Our Model
+                The Infrastructure
               </button>
             </div>
           </div>
@@ -126,7 +123,7 @@ const Home: React.FC = () => {
                 <ShieldCheck className="w-7 h-7 text-[#D69E2E]" />
               </div>
               <h3 className="text-2xl font-black mb-4 relative z-10 uppercase tracking-tight">For Guards</h3>
-              <p className="text-base text-slate-400 mb-8 leading-relaxed relative z-10">Transition your skills into protecting your community's most vulnerable spaces.</p>
+              <p className="text-base text-slate-400 mb-8 leading-relaxed relative z-10">Transition elite unit discipline into high-reliability community guardianship.</p>
               <span className="text-[#D69E2E] font-black text-sm flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest relative z-10">
                 Enlist now <ArrowRight className="w-5 h-5" />
               </span>
@@ -144,9 +141,9 @@ const Home: React.FC = () => {
                 <Landmark className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-2xl font-black mb-4 relative z-10 uppercase tracking-tight text-white">For Schools</h3>
-              <p className="text-base text-slate-400 mb-8 leading-relaxed relative z-10">Implement a precision-led safety model balanced with human warmth.</p>
+              <p className="text-base text-slate-400 mb-8 leading-relaxed relative z-10">Implement a precision-led safety model with verifiable operational uptime.</p>
               <span className="text-white font-black text-sm flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest relative z-10">
-                Safety model <ArrowRight className="w-5 h-5" />
+                System Model <ArrowRight className="w-5 h-5" />
               </span>
             </div>
 
@@ -162,7 +159,7 @@ const Home: React.FC = () => {
                 <Heart className="w-7 h-7 text-[#D69E2E]" />
               </div>
               <h3 className="text-2xl font-black mb-4 relative z-10 uppercase tracking-tight">For Donors</h3>
-              <p className="text-base text-slate-400 mb-8 leading-relaxed relative z-10">Fund the protection of local institutions and meaningful veteran careers.</p>
+              <p className="text-base text-slate-400 mb-8 leading-relaxed relative z-10">Fund the data-verified protection of local community infrastructure.</p>
               <span className="text-[#D69E2E] font-black text-sm flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-widest relative z-10">
                 Support SAP <ArrowRight className="w-5 h-5" />
               </span>
@@ -183,22 +180,22 @@ const Home: React.FC = () => {
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020617]/40 to-[#020617]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="text-5xl md:text-8xl font-black mb-8 text-white tracking-tighter uppercase leading-none">Ready to serve?</h2>
+          <h2 className="text-5xl md:text-8xl font-black mb-8 text-white tracking-tighter uppercase leading-none">Command Stewardship.</h2>
           <p className="text-slate-300 text-lg md:text-3xl max-w-3xl mx-auto mb-16 font-medium leading-relaxed">
-            Join the alliance of professional guardians dedicated to reclaiming safety.
+            Join the alliance of professional guardians leveraging the rigors of mission-critical engineering to reclaim safety.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6 md:gap-8">
             <button 
               onClick={() => navigateTo('#/contact')} 
               className="px-12 py-6 md:px-16 md:py-7 bg-[#D69E2E] text-[#1A365D] rounded-[2rem] font-black text-lg md:text-2xl hover:bg-[#c48d24] hover:scale-105 transition-all active:scale-95 shadow-2xl shadow-black/50"
             >
-              Apply to Join
+              Apply to Mission
             </button>
             <button 
               onClick={() => navigateTo('#/contact?role=donor')} 
               className="px-12 py-6 md:px-16 md:py-7 bg-white/10 text-white rounded-[2rem] font-black text-lg md:text-2xl hover:bg-white/20 transition-all active:scale-95 border border-white/20 backdrop-blur-md"
             >
-              Donate Today
+              Support the Patrol
             </button>
           </div>
         </div>
