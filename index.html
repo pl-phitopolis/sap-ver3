@@ -35,10 +35,37 @@
             text-shadow: 0 0 20px rgba(214, 158, 46, 0.3);
         }
         
-        /* Tactical Micro-Highlights */
+        /* Tactical & Cinematic Enhancements */
         .tactical-border {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .film-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 25;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            mix-blend-mode: overlay;
+        }
+
+        .vignette {
+            position: absolute;
+            inset: 0;
+            z-index: 26;
+            pointer-events: none;
+            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.6) 80%, rgba(0,0,0,0.9) 100%);
+        }
+
+        /* Cinematic Blur Reveal */
+        @keyframes blur-reveal {
+            from { opacity: 0; filter: blur(20px); transform: scale(1.1); }
+            to { opacity: 1; filter: blur(0px); transform: scale(1); }
+        }
+        .animate-blur-reveal {
+            animation: blur-reveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         /* Scroll Reveal Global System */
