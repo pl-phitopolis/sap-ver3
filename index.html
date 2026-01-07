@@ -36,6 +36,12 @@
         .shimmer-trigger:hover .shimmer-element {
             animation: shimmer 1.5s infinite;
         }
+        
+        /* Custom Paging Bezier for "Weighted" Feel */
+        .paging-transition {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
