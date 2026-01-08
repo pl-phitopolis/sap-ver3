@@ -17,7 +17,7 @@ const Contact: React.FC = () => {
                 The strategic epicenter for Safety Alert Patrol. Operating with the precision of a mission control center to safeguard communities.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 mb-16">
                 {[
                   { label: 'Secure Comms', val: 'ops@safetyalertpatrol.org', icon: <Mail className="w-5 h-5 text-[#D69E2E]" /> },
                   { label: 'Strategic Line', val: '+1 (800) SAP-SAFE', icon: <Phone className="w-5 h-5 text-white" /> },
@@ -25,12 +25,16 @@ const Contact: React.FC = () => {
                   { label: 'Unit Infrastructure', val: 'Arlington, Virginia', icon: <Cpu className="w-5 h-5 text-white" /> }
                 ].map((item, idx) => (
                   <div key={idx} className={`flex gap-5 items-start p-6 bg-[#1A365D]/20 rounded-2xl border border-white/5 reveal-hidden ${isVisible ? `reveal-visible stagger-${idx + 1}` : ''}`}>
-                    <div className="p-3 bg-slate-950 border border-white/10 rounded-xl">
+                    <div className="p-3 bg-slate-950 border border-white/10 rounded-xl shrink-0">
                       {item.icon}
                     </div>
-                    <div className="text-left">
-                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">{item.label}</p>
-                      <p className="text-base font-black text-white">{item.val}</p>
+                    <div className="text-left min-w-0">
+                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">
+                        {item.label}
+                      </p>
+                      <p className="text-base font-black text-white break-words">
+                        {item.val}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -38,10 +42,10 @@ const Contact: React.FC = () => {
 
               <div className={`p-8 bg-slate-900 border-l-4 border-[#D69E2E] rounded-r-2xl reveal-hidden ${isVisible ? 'reveal-visible stagger-4' : ''}`}>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-[#1A365D] rounded-full flex items-center justify-center border border-white/10">
+                  <div className="w-12 h-12 bg-[#1A365D] rounded-full flex items-center justify-center border border-white/10 shrink-0">
                     <User className="w-6 h-6 text-[#D69E2E]" />
                   </div>
-                  <div className="text-left">
+                  <div className="text-left min-w-0">
                     <p className="text-xs font-black text-slate-500 uppercase tracking-widest">Executive Office</p>
                     <p className="text-lg font-black text-white uppercase tracking-tight">Baron Davis</p>
                   </div>
@@ -66,7 +70,7 @@ const Contact: React.FC = () => {
                     <MapPin className="w-10 h-10 text-[#D69E2E]" />
                   </div>
                   <h3 className="text-3xl font-black text-white mb-4 uppercase tracking-tighter">Command Stewardship</h3>
-                  <p className="text-slate-400 font-medium leading-relaxed max-w-sm">
+                  <p className="text-slate-400 font-medium leading-relaxed max-w-sm break-words">
                     1200 Security Way, Suite 100 <br /> Arlington, VA 22201 <br /> United States
                   </p>
                   <div className="mt-12 flex items-center gap-3 text-[#D69E2E] font-black text-xs uppercase tracking-[0.2em]">
@@ -75,11 +79,11 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="absolute bottom-8 left-8 right-8 z-20 flex justify-between items-end border-t border-white/10 pt-8">
-                   <div className="text-left">
+                   <div className="text-left min-w-0">
                      <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest mb-1">Sector</p>
                      <p className="text-sm font-black text-white uppercase tracking-tight">Mid-Atlantic</p>
                    </div>
-                   <div className="text-right">
+                   <div className="text-right min-w-0">
                      <p className="text-[10px] font-black text-slate-600 uppercase tracking-widest mb-1">Status</p>
                      <p className="text-sm font-black text-[#D69E2E] uppercase tracking-tight">Mission Active</p>
                    </div>
