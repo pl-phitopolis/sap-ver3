@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Shield, Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
@@ -72,10 +73,10 @@ const Navigation: React.FC<NavigationProps> = ({ currentPath: propsPath }) => {
                 );
               })}
               <button
-                onClick={(e) => handleNavClick(e, '#/contact')}
-                aria-current={activePath === '#/contact' ? 'page' : undefined}
+                onClick={(e) => handleNavClick(e, '#/get-involved')}
+                aria-current={activePath === '#/get-involved' ? 'page' : undefined}
                 className={`px-5 py-2 rounded-xl text-sm font-black transition-all transform hover:scale-105 active:scale-95 ml-4 outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
-                  activePath === '#/contact' 
+                  activePath === '#/get-involved' 
                     ? 'bg-white text-[#1A365D]' 
                     : 'bg-[#D69E2E] hover:bg-[#c48d24] text-[#1A365D]'
                 }`}
@@ -125,7 +126,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentPath: propsPath }) => {
           })}
           <div className="pt-4">
             <button
-              onClick={(e) => handleNavClick(e, '#/contact')}
+              onClick={(e) => handleNavClick(e, '#/get-involved')}
               className="w-full block text-center bg-[#D69E2E] text-[#1A365D] px-5 py-4 rounded-2xl text-base font-black active:scale-95 transition-transform shadow-xl shadow-[#D69E2E]/20"
             >
               Get Involved

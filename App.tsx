@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -5,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import GetInvolved from './pages/GetInvolved';
 
 interface RouterContextType {
   currentPath: string;
@@ -66,6 +68,8 @@ const App: React.FC = () => {
         return <Services />;
       case '#/contact':
         return <Contact />;
+      case '#/get-involved':
+        return <GetInvolved />;
       default:
         return <Home />;
     }
@@ -85,7 +89,7 @@ const App: React.FC = () => {
         {/* Persistent CTA Button */}
         <div className="fixed bottom-8 right-8 z-[60] hidden md:block">
           <button 
-            onClick={() => navigateTo('#/contact?role=donor')}
+            onClick={() => navigateTo('#/get-involved?role=donor')}
             className="bg-[#D69E2E] hover:bg-[#c48d24] text-slate-900 font-bold py-4 px-8 rounded-2xl shadow-2xl shadow-[#D69E2E]/20 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center gap-3 border border-white/20"
           >
             <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>

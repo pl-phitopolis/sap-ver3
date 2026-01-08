@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Shield, Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { useRouter } from '../App';
@@ -37,8 +38,8 @@ const Footer: React.FC = () => {
               <li><button onClick={(e) => handleNav(e, '#/')} className="text-slate-400 hover:text-[#D69E2E] transition-colors font-bold uppercase text-xs tracking-widest">Home</button></li>
               <li><button onClick={(e) => handleNav(e, '#/about')} className="text-slate-400 hover:text-[#D69E2E] transition-colors font-bold uppercase text-xs tracking-widest">About Us</button></li>
               <li><button onClick={(e) => handleNav(e, '#/services')} className="text-slate-400 hover:text-[#D69E2E] transition-colors font-bold uppercase text-xs tracking-widest">Safety Model</button></li>
-              <li><button onClick={(e) => handleNav(e, '#/contact?role=guard')} className="text-slate-400 hover:text-[#D69E2E] transition-colors font-bold uppercase text-xs tracking-widest">Join the Patrol</button></li>
-              <li><button onClick={(e) => handleNav(e, '#/contact?role=school')} className="text-slate-400 hover:text-[#D69E2E] transition-colors font-bold uppercase text-xs tracking-widest">Partner Schools</button></li>
+              <li><button onClick={(e) => handleNav(e, '#/get-involved?role=guard')} className="text-slate-400 hover:text-[#D69E2E] transition-colors font-bold uppercase text-xs tracking-widest">Join the Patrol</button></li>
+              <li><button onClick={(e) => handleNav(e, '#/get-involved?role=school')} className="text-slate-400 hover:text-[#D69E2E] transition-colors font-bold uppercase text-xs tracking-widest">Partner Schools</button></li>
             </ul>
           </div>
 
