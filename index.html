@@ -77,12 +77,23 @@
             animation: nav-underline-sweep 2s linear infinite;
         }
 
-        @keyframes radar-ping {
-            0% { transform: scale(1); opacity: 0.6; }
-            100% { transform: scale(1.8); opacity: 0; }
+        /* Breathing Heartbeat for persistence */
+        @keyframes breathing-heartbeat {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0px rgba(214, 158, 46, 0); brightness: 1; }
+            50% { transform: scale(1.03); box-shadow: 0 0 30px rgba(214, 158, 46, 0.3); brightness: 1.1; }
         }
-        .animate-radar {
-            animation: radar-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        .animate-breathing {
+            animation: breathing-heartbeat 3s ease-in-out infinite;
+        }
+
+        /* Tactical Scanning Sweep */
+        @keyframes internal-scanning {
+            0% { left: -100%; }
+            20% { left: 120%; }
+            100% { left: 120%; }
+        }
+        .animate-scanning-internal {
+            animation: internal-scanning 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
 
         /* Scroll Reveal Global System */

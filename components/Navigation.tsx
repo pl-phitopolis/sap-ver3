@@ -149,26 +149,23 @@ const Navigation: React.FC<NavigationProps> = ({ currentPath: propsPath }) => {
                 );
               })}
 
-              {/* ARMED CTA BUTTON */}
+              {/* MINIMAL CTA BUTTON */}
               <div className="relative ml-4">
-                {/* Radar Pulse */}
-                <div className="absolute inset-0 rounded-xl bg-[#D69E2E] opacity-20 animate-radar pointer-events-none"></div>
-                
                 <button
                   onClick={(e) => handleNavClick(e, '#/get-involved')}
-                  className={`relative px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all transform hover:scale-105 active:scale-95 group overflow-hidden border border-white/10 ${
+                  className={`relative px-6 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all transform hover:scale-[1.05] active:scale-95 group overflow-hidden border border-white/10 ${
                     activePath === '#/get-involved' 
                       ? 'bg-white text-[#1A365D]' 
-                      : 'bg-[#D69E2E] hover:bg-[#D69E2E]/80 backdrop-blur-md text-[#1A365D]'
+                      : 'bg-[#D69E2E] hover:bg-[#D69E2E]/90 backdrop-blur-md text-[#1A365D]'
                   }`}
                 >
                   <span className="relative z-10 flex items-center gap-2">
-                    <Target className={`w-3 h-3 ${activePath === '#/get-involved' ? 'text-[#1A365D]' : 'text-[#1A365D]'}`} />
+                    <Target className="w-3 h-3" />
                     Get Involved
                   </span>
                   
-                  {/* Micro Scanning Sweep */}
-                  <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  {/* Micro Shimmer (one-time on hover) */}
+                  <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-0 group-hover:opacity-100">
                     <div className="w-1 h-32 bg-white/40 blur-md absolute top-[-50%] left-[-100%] group-hover:animate-nav-sweep rotate-[25deg]"></div>
                   </div>
                 </button>

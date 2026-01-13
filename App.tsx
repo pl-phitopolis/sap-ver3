@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -7,6 +6,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import GetInvolved from './pages/GetInvolved';
+import { Heart } from 'lucide-react';
 
 interface RouterContextType {
   currentPath: string;
@@ -86,14 +86,22 @@ const App: React.FC = () => {
         </main>
         <Footer />
         
-        {/* Persistent CTA Button */}
-        <div className="fixed bottom-8 right-8 z-[60] hidden md:block">
+        {/* Persistent CTA Button - "Breathing Heartbeat" Edition */}
+        <div className="fixed bottom-8 right-8 z-[60] hidden md:block group/donate">
           <button 
             onClick={() => navigateTo('#/get-involved?role=donor')}
-            className="bg-[#D69E2E] hover:bg-[#c48d24] text-slate-900 font-bold py-4 px-8 rounded-2xl shadow-2xl shadow-[#D69E2E]/20 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center gap-3 border border-white/20"
+            className="relative bg-[#D69E2E] text-slate-900 font-black py-4.5 px-9 rounded-2xl transition-all flex items-center gap-3 border border-white/20 animate-breathing overflow-hidden group/btn"
           >
-            <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-            Donate to Mission
+            {/* Internal Scanning Heartbeat */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+               <div className="absolute top-0 w-20 h-full bg-white/30 blur-2xl -skew-x-12 animate-scanning-internal"></div>
+            </div>
+
+            <Heart className="w-5 h-5 relative z-10 fill-slate-900 group-hover/btn:scale-125 transition-transform" />
+            <span className="relative z-10 uppercase tracking-widest text-sm">Donate to Mission</span>
+            
+            {/* Subtle Reflection Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent pointer-events-none"></div>
           </button>
         </div>
       </div>
